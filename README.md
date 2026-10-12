@@ -1,1 +1,1 @@
-# simple-jump-game
+# simple-snake-game
