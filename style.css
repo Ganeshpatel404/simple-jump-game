@@ -1,19 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root { --ink: #f4f7f2; --muted: #83918b; --bg: #101615; --panel: #17201e; --line: #2a3833; --acid: #c8f34a; --mint: #79e6a3; --orange: #ff9f5c; }
-* { box-sizing: border-box; }
-body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink); font-family: 'Space Grotesk', sans-serif; background-image: linear-gradient(135deg, rgba(200,243,74,.035), transparent 38%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: auto, 36px 36px, 36px 36px; }
-button, a { font: inherit; } button { cursor: pointer; }
-.app-shell { max-width: 1180px; margin: auto; padding: 30px 42px 26px; }
-.topbar, .top-actions, .intro-row, .game-layout, .game-head, .game-controls, footer { display: flex; align-items: center; }
-.topbar { justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
-.brand { color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 2px; }.brand-icon { color: var(--acid); font-size: 18px; margin-right: 9px; }
-.top-actions { color: var(--muted); gap: 9px; font: 10px 'DM Mono', monospace; letter-spacing: 1px; }.live-dot, .status-light { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 12px var(--mint); display: inline-block; }.icon-button { border: 0; color: var(--muted); background: none; font-size: 21px; padding: 0 0 0 16px; }
-.intro-row { justify-content: space-between; padding: 72px 24px 48px; }.kicker, .panel-label, .game-head, footer { color: var(--acid); font: 10px 'DM Mono', monospace; letter-spacing: 1.6px; }.kicker { margin: 0 0 13px; }.intro-row h1 { font-size: clamp(42px, 6vw, 74px); line-height: .95; letter-spacing: -3px; margin: 0; }.intro-row h1 span { color: var(--acid); }.intro-note { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0 7% 0 0; }
-.game-layout { align-items: stretch; gap: 20px; }.score-panel { width: 175px; background: var(--panel); border: 1px solid var(--line); padding: 25px 20px; }.score-panel strong { display: block; color: var(--acid); font-size: 40px; line-height: 1; letter-spacing: -2px; margin: 14px 0 18px; }.best-label { margin-top: 26px; }.score-panel b { display: block; color: var(--ink); font-size: 22px; margin-top: 9px; }.meter { background: #28352f; height: 4px; }.meter span { background: var(--acid); display: block; width: 0; height: 100%; transition: width .25s ease; }.rule { border-top: 1px solid var(--line); margin: 28px 0 18px; }.status-copy { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0; }
-.game-card { min-width: 0; flex: 1; background: var(--panel); border: 1px solid var(--line); }.game-head { justify-content: space-between; height: 47px; padding: 0 18px; color: var(--muted); font-size: 9px; }.status-light { background: var(--orange); box-shadow: 0 0 10px var(--orange); margin-right: 7px; vertical-align: 1px; }.board-wrap { position: relative; background: #0c1211; }.board-wrap canvas { display: block; width: 100%; height: auto; }.game-overlay { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; background: rgba(12,18,17,.88); }.game-overlay[hidden] { display: none; }.overlay-kicker { color: var(--acid); font: 10px 'DM Mono', monospace; letter-spacing: 2px; }.game-overlay strong { font-size: 34px; margin: 11px 0 8px; }.game-overlay p { color: var(--muted); font-size: 13px; margin: 0 0 20px; }.primary-button { border: 0; background: var(--acid); color: #132015; font: 500 10px 'DM Mono', monospace; letter-spacing: 1px; padding: 13px 17px; }.game-controls { justify-content: space-between; min-height: 55px; padding: 0 15px; }.secondary-button { border: 0; background: none; color: var(--muted); font: 10px 'DM Mono', monospace; letter-spacing: 1px; padding: 10px 3px; }.secondary-button span { color: var(--acid); font-size: 14px; margin-right: 5px; }.control-hint { color: var(--muted); font: 10px 'DM Mono', monospace; }.control-hint kbd { border: 1px solid var(--line); color: var(--ink); padding: 3px 5px; margin: 0 2px; border-radius: 3px; }
-.touch-controls { display: none; margin: 18px auto 0; text-align: center; }.touch-controls button { width: 52px; height: 42px; margin: 3px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--acid); font-size: 22px; touch-action: manipulation; }.touch-controls button:active { background: var(--acid); color: var(--bg); }
-footer { justify-content: center; gap: 13px; color: #52615b; font-size: 9px; padding-top: 29px; }footer .footer-line { width: 35px; height: 1px; background: var(--line); }
-@media (max-width: 720px) { .app-shell { padding: 20px 15px; }.top-actions { font-size: 8px; }.intro-row { padding: 48px 7px 28px; align-items: flex-end; }.intro-row h1 { font-size: 47px; }.intro-note { font-size: 11px; margin-right: 0; }.game-layout { display: block; }.score-panel { width: auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 7px 16px; padding: 15px 17px; }.score-panel strong { font-size: 28px; margin: 0; }.score-panel .meter { grid-column: 1 / -1; order: 3; }.best-label { margin: 0; }.score-panel b { margin: 0; }.difficulty-block { grid-column: 1 / -1; margin-top: 8px; }.difficulty-options { grid-template-columns: repeat(4, 1fr); }.score-panel .rule, .status-copy { display: none; }.game-card { margin-top: 12px; }.control-hint { display: none; }.touch-controls { display: block; }footer { font-size: 7px; padding-top: 23px; } }
-.difficulty-block { margin-top: 28px; }.difficulty-options { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 10px; }.difficulty-options button { border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--muted); font: 9px 'DM Mono', monospace; padding: 7px 3px; }.difficulty-options button:hover, .difficulty-options button.active { border-color: var(--acid); color: var(--acid); background: rgba(200,243,74,.08); }
-.board-wrap canvas { touch-action: none; }
-@media (max-width: 720px) { .app-shell { padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }.topbar { padding-bottom: 16px; }.brand { font-size: 11px; }.intro-row h1 { letter-spacing: -2px; }.touch-controls button { width: 60px; height: 50px; font-size: 25px; margin: 4px; }.game-controls { min-height: 62px; padding-left: 18px; padding-right: 18px; }.secondary-button { padding: 14px 3px; } }
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #0d1117;
+  color: #f0f6fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game {
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 12px;
+  max-width: 480px;
+  color: #8b949e;
+}
+
+.scoreboard strong {
+  color: #f0f6fc;
+}
+
+.board-container {
+  position: relative;
+  border: 2px solid #30363d;
+  background: #17202a;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  background: rgb(13 17 23 / 88%);
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay h2,
+.overlay p {
+  margin: 0;
+}
+
+.overlay p {
+  color: #8b949e;
+}
+
+button {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #21262d;
+  color: #f0f6fc;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 14px;
+}
+
+button:hover,
+button:focus-visible {
+  border-color: #7ee787;
+}
+
+.overlay button {
+  margin: 8px auto 0;
+  background: #238636;
+  border-color: #2ea043;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.instructions {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 14px 0 0;
+}
+
+.touch-controls {
+  display: none;
+  margin-top: 18px;
+}
+
+.touch-controls button {
+  width: 48px;
+  height: 42px;
+  margin: 3px;
+  padding: 0;
+  font-size: 1.25rem;
+  touch-action: manipulation;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .touch-controls {
+    display: block;
+  }
+}

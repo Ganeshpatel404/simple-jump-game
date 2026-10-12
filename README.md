@@ -1,6 +1,6 @@
-# Neon Snake
+# Simple Snake
 
-A modern, dependency-free Snake game built with HTML, CSS, and JavaScript.
+A small, dependency-free Snake game built with HTML, CSS, and JavaScript.
 
 ## Play
 
@@ -12,7 +12,7 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-- Use arrow keys or `WASD` to turn.
+- Use arrow keys or `WASD` to move.
 - Press `Space` to pause or resume.
-- On phones, use the touch controls below the board.
-- Eat the orange fruit, avoid the walls and your own tail, and beat the high score.
+- On phones, use the on-screen controls.
+- Eat the yellow food, avoid the walls and your own tail, and beat the high score.
