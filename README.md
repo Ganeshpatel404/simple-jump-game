@@ -2,7 +2,7 @@
 
 A small, dependency-free Snake game built with HTML, CSS, and JavaScript.
 
-## Play
+## Play toss
 
 Open `index.html` directly, or run:
 
